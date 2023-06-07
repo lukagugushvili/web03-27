@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- #5 -->
+        <div id="user-list"></div>
+
+
+    <script>
+        // #5
+
+        const users = [
+        {
+            id: 7,
+            email: "michael.lawson@reqres.in",
+            first_name: "Michael",
+            last_name: "Lawson",
+            avatar: "https://www.simplilearn.com/ice9/free_resources_article_thumb/Become_a_Front_End_Developer.jpg"
+        },
+        {
+            id: 8,
+            email: "lindsay.ferguson@reqres.in",
+            first_name: "Lindsay",
+            last_name: "Ferguson",
+            avatar: "https://www.simplilearn.com/ice9/free_resources_article_thumb/Become_a_Front_End_Developer.jpg"
+        },
+        {
+            id: 9,
+            email: "tobias.funke@reqres.in",
+            first_name: "Tobias",
+            last_name: "Funke",
+            avatar: "https://www.simplilearn.com/ice9/free_resources_article_thumb/Become_a_Front_End_Developer.jpg"
+        },
+        {
+            id: 10,
+            email: "byron.fields@reqres.in",
+            first_name: "Byron",
+            last_name: "Fields",
+            avatar: "https://www.simplilearn.com/ice9/free_resources_article_thumb/Become_a_Front_End_Developer.jpg"
+        },
+        {
+            id: 11,
+            email: "george.edwards@reqres.in",
+            first_name: "George",
+            last_name: "Edwards",
+            avatar: "https://www.simplilearn.com/ice9/free_resources_article_thumb/Become_a_Front_End_Developer.jpg"
+        },
+        {
+            id: 12,
+            email: "rachel.howell@reqres.in",
+            first_name: "Rachel",
+            last_name: "Howell",
+            avatar: "https://www.simplilearn.com/ice9/free_resources_article_thumb/Become_a_Front_End_Developer.jpg"
+        }
+        ];
+   
+        const container = document.createElement("div");
+        document.body.appendChild(container);
+        container.style.display = 'flex';
+        container.style.justifyContent = 'center';
+        container.style.padding = '5%';
+
+        const userList = document.getElementById('user-list');
+        container.appendChild(userList);
+        userList.style.border = "1px solid aqua";
+        userList.style.borderRadius = "10px";
+        userList.style.display = "flex";
+        userList.style.flexWrap = "wrap";
+        userList.style.gap = "20px";
+        userList.style.width = "100% auto";
+        userList.style.padding = "20px";
+  
+
+        for (let i = 0; i < users.length; i++) {
+            let = user = users[i];
+
+        const userCards = document.createElement('div');
+        userList.appendChild(userCards);
+        userCards.style.border = '1px solid black';
+        userCards.style.borderRadius = '5px';
+        userCards.style.display = 'flex';
+        userCards.style.flexDirection = 'column';
+        userCards.style.padding = '10px';
+
+        const personImg = document.createElement('img');
+        userCards.appendChild(personImg);
+        personImg.setAttribute("src", user.avatar);
+        personImg.style.height = '100px';
+        personImg.style.objectFit = 'cover';
+        personImg.style.verticalAlign = 'center';
+
+        const nameInfo = document.createElement('h3');
+        userCards.appendChild(nameInfo);
+        nameInfo.textContent = `${user.first_name} ${user.last_name}`;
+        nameInfo.style.textAlign = 'center';
+        nameInfo.style.paddingTop = '10px';
+
+        const iconDiv = document.createElement('div');
+        userCards.appendChild(iconDiv);
+        iconDiv.style.display = 'flex';
+        iconDiv.style.justifyContent = 'space-between';
+        iconDiv.style.paddingTop = '25px';
+
+        const deleteImg = document.createElement('img');
+        iconDiv.appendChild(deleteImg);
+        deleteImg.setAttribute('src', './img/delete.PNG');
+        deleteImg.style.height = '30px';
+        deleteImg.style.cursor = 'pointer';
+        deleteImg.addEventListener('click', () => userCards.remove());
+
+        const deleteP = document.createElement('p');
+        iconDiv.appendChild(deleteP);
+        
+        const infoImg = document.createElement('img');
+        iconDiv.appendChild(infoImg);
+        infoImg.setAttribute('src', './img/info.PNG');
+        infoImg.style.height = '30px';
+        infoImg.style.cursor = 'pointer';
+        infoImg.addEventListener('click', () => {
+            infoP.textContent = `${user.email}`;
+        });
+
+        const infoP = document.createElement('p');
+        userCards.appendChild(infoP);
+        infoP.style.textAlign = 'center';
+        infoP.style.paddingTop = '20px';
+        infoP.style.paddingBottom = '10px';
+
+        }
+
+    </script>
+</body>
+</html>
